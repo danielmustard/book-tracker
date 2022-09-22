@@ -4,27 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Tracker</title>
-    <script src="./index.js" defer></script>
+    <title>Library System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    
+    <script src="./index.js" defer></script>
 </head>
 <body>
-    <div class="side">
-        <div class="form">
-            <input type="text" name="book-title" id="book-title" placeholder="Book Title">
-            <input type="text" name="book-author" id="book-author" placeholder="Author">
-            <input type="text" name="book-pages" id="book-pages" placeholder="Pages">
-            <label for="book-read">Has Been Read?<input type="checkbox" name="book-read" id="book-read"></label>
-
-            <button>Submit</button>
+    <div class="topBar">
+        <div class="left">
+            Library
         </div>
-        
     </div>
-        
+    <div class="formContainer">
+        <form action="">
+            <fieldset>
+                <label for="first_name">Book Title</label><input type="first_name" id="book-title" tabindex="1">
+                <label for="email">Author</label><input type="text" id="book-author" tabindex="2">
+                <label for="password">Pages:</label><input type="number">
+                                
+                <label for="password">Have you read?</label><input type="checkbox">
 
-        
+
+                <button>Submit</button>
+            </fieldset>
+            
+        </form>
+    
+    </div>  
     
 </body>
 </html>

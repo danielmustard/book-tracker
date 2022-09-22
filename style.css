@@ -1,27 +1,90 @@
-.side{
-    float: left;
-    height: 100vh;
-    width: 500px;
-    display: flex;   
+*{
+    font-family: 'Oswald', sans-serif;
+}
+:root{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.topBar{
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #cbff8c;
+    width: 100vw;
+    margin: 0;
+}
+.left{
+    padding-left: 30px;
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
-.form{
+.formContainer{
     display: flex;
-    flex-direction: column;
-    width: 500px;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* Makes flex container fill available space */
+    flex-flow: column;
     justify-content: center;
-    align-items: center;
-    padding-left: 30px;
-    gap: 20px;
+    gap: 40px;
+    padding-top: 40px;
+}
+.formContainer > form > fieldset > button{
+    margin-top: 30px;
+    width: 100px;
+    background-color: #58cc02;
+    box-shadow: 0 5px 0 #58a700; 
+    color: white;
+    border: none;
+    font-size: large;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+/* Form display options */
+form{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #03b5aa;
+    width: 300px;
+    padding: 50px;
+}
+
+form > fieldset{
+    border: none;
+}
+
+input, label{
+    display: block;
+    width: 100%;
+}
+input{
+    height: 30px;
+}
+
+input[type=checkbox]{
+    width: 6%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+label{
+    margin-top: 10px;
 }
 
 label{
-    display: flex;
-    gap: 25px;
-}
-
-input::placeholder{
-    padding:0px;
-    margin:0px;
-    text-align: center;
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-size: medium;
+    color: white;
+    font-weight: bolder;
 }
