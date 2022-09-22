@@ -24,13 +24,11 @@ body{
 }
 
 .formContainer{
-    display: flex;
+    display: none;
+    position: absolute;
+    width: 100vw;
     padding-left: 50px;
     padding-right: 50px;
-    /* Makes flex container fill available space */
-    flex-flow: column;
-    justify-content: center;
-    gap: 40px;
     padding-top: 40px;
 }
 .formContainer > form > fieldset > button{
@@ -48,6 +46,10 @@ body{
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
+.formContainer > form > fieldset > button:active, #new-book-button:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
 /* Form display options */
 form{
     display: grid;
@@ -55,6 +57,7 @@ form{
     background-color: #03b5aa;
     width: 300px;
     padding: 50px;
+    border-radius: 10px;
 }
 
 form > fieldset{
@@ -87,4 +90,38 @@ label{
     font-size: medium;
     color: white;
     font-weight: bolder;
+}
+
+.newBook{
+    display: flex;
+    margin-top: 30px;
+    width: 100vw;
+    justify-content: center;
+    font-size: xx-large;
+    
+}
+.newBook > a { 
+    all: unset;
+    cursor: pointer;
+}
+
+#new-book-button{
+    display: flex;
+    gap: 3px;
+    padding: 15px;
+    background-color: #ffd43b;
+    box-shadow: 0 5px 0 #183153; 
+    color: #183153;
+    border: none;
+    font-size: large;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.books-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./index.js" defer></script>
 </head>
 <body>
@@ -17,22 +18,32 @@
             Library
         </div>
     </div>
-    <div class="formContainer">
+
+    <div class="newBook">
+        <button id="new-book-button"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg> Add New Book</button>
+    </div>
+    <div class="formContainer" id="form-container">
         <form action="">
             <fieldset>
-                <label for="first_name">Book Title</label><input type="first_name" id="book-title" tabindex="1">
-                <label for="email">Author</label><input type="text" id="book-author" tabindex="2">
-                <label for="password">Pages:</label><input type="number">
+                <label for="book_title">Book Title</label><input type="first_name" id="book-title" tabindex="1">
+                <label for="book_author">Author</label><input type="text" id="book-author" tabindex="2">
+                <label for="book_pages">Pages:</label><input type="number" id="book-pages" >
                                 
-                <label for="password">Have you read?</label><input type="checkbox">
+                <label for="book_status">Have you read?</label><input type="checkbox" id="book-read">
 
 
-                <button>Submit</button>
+                <button id="form-submit-button">Submit</button>
             </fieldset>
-            
         </form>
-    
-    </div>  
+    </div> 
+
+    <div class="books-grid">
+
+
+    </div>
     
 </body>
 </html>
