@@ -9,6 +9,8 @@ const bookAuthorInput = document.getElementById('book-author')
 const bookPagesInput = document.getElementById('book-pages')
 const bookStatus = document.getElementById('book-read')
 
+//Dom 
+
 //Array to store books added to library 
 let myLibrary = []
 
@@ -23,8 +25,9 @@ formButton.addEventListener('click', () =>{
 
 })
 
-formSubmitButton.addEventListener('click', () => {
-
+formSubmitButton.addEventListener('click', (e) => {
+    //preventing form button from refeshing page (default)
+    e.preventDefault()
     const newBook = new Book(
         bookTitleInput.value,
         bookAuthorInput.value,
@@ -34,6 +37,9 @@ formSubmitButton.addEventListener('click', () => {
     myLibrary.push(newBook)
     
     console.table(myLibrary)
+    //hiding form again on submit'
+    formContainer.style.display = "none"
+    addBookToLibrary();
 })
 
 
@@ -52,7 +58,18 @@ function Book(title,author,pages,read){
     }
 }
 
+
+
 const addBookToLibrary = () => {
+    
+    let DOMbook = document.getElementById('book')
+    const clone = DOMbook.cloneNode(true)
+
+    document.getElementById('books-grid').appendChild(clone)
+
+    myLibrary.forEach(book => {
+        
+    });
     
 }
 
