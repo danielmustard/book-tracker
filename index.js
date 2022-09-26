@@ -35,8 +35,6 @@ formSubmitButton.addEventListener('click', (e) => {
         bookStatus.value,
     )
     myLibrary.push(newBook)
-    
-    console.table(myLibrary)
     //hiding form again on submit'
     formContainer.style.display = "none"
     addBookToLibrary();
@@ -61,15 +59,16 @@ function Book(title,author,pages,read){
 
 
 const addBookToLibrary = () => {
-    
-    let DOMbook = document.getElementById('book')
-    const clone = DOMbook.cloneNode(true)
-
-    document.getElementById('books-grid').appendChild(clone)
-
-    myLibrary.forEach(book => {
+        console.log(myLibrary);
+        //First we get the ul thats going to hold each book
+        const domLibrary = document.getElementById('books-grid')
+        console.log(domLibrary)
+        //For each book in the library we need to create some HTML elements:
+        //First we need to make a new list item with class of book:
+        let listItem = document.createElement('li');
+        listItem.classList.add('book')
+        domLibrary.appendChild(listItem);
+        let listItems = document.querySelectorAll('li')
         
-    });
-    
-}
+        }
 

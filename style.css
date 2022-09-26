@@ -141,5 +141,9 @@ label{
     align-self: center;
 }
 
+ul{
+    all: unset;
+}
+
 .book-info{
 }
