@@ -9,7 +9,6 @@ const bookAuthorInput = document.getElementById('book-author')
 const bookPagesInput = document.getElementById('book-pages')
 const bookStatus = document.getElementById('book-read')
 
-//Dom 
 
 //Array to store books added to library 
 let myLibrary = []
@@ -24,7 +23,6 @@ formButton.addEventListener('click', () =>{
     formContainer.style.justifyContent = 'center'
 
 })
-
 formSubmitButton.addEventListener('click', (e) => {
     //preventing form button from refeshing page (default)
     e.preventDefault()
@@ -40,9 +38,6 @@ formSubmitButton.addEventListener('click', (e) => {
     addBookToLibrary();
 })
 
-
-
-
 //The constructor that makes our books
 function Book(title,author,pages,read){
     //this states that the values being used for the current construction should be what has just been passed in.
@@ -56,19 +51,49 @@ function Book(title,author,pages,read){
     }
 }
 
-
-
 const addBookToLibrary = () => {
-        console.log(myLibrary);
-        //First we get the ul thats going to hold each book
-        const domLibrary = document.getElementById('books-grid')
-        console.log(domLibrary)
-        //For each book in the library we need to create some HTML elements:
-        //First we need to make a new list item with class of book:
-        let listItem = document.createElement('li');
-        listItem.classList.add('book')
-        domLibrary.appendChild(listItem);
-        let listItems = document.querySelectorAll('li')
+    //
+    const booksGrid = document.getElementById('books-grid')
+    //This gets the most recent library book added to array
+    let recentBook = myLibrary.pop()
+    //need to make dom elements to hold our book information 
+    //making list item to append to
+    let listItem = document.createElement('li')
+    listItem.classList = 'book'
+
+    //appending list item to UL 
+    booksGrid.appendChild(listItem)
+
+    let bookTitle = document.createElement('div')
+    let bookAuthor = document.createElement('div')
+    let bookPages = document.createElement('div')
+    let bookRead = document.createElement('div')
+    let deleteButton = document.createElement('button')
+    deleteButton.classList = 'delete-button'
+    deleteButton.innerHTML = 'Delete'
+
+    deleteButton.addEventListener('click', () =>{
+        let parent = deleteButton.parentNode
+        parent.remove()
+    })
+
+    listItem.appendChild(bookTitle)
+    listItem.appendChild(bookAuthor)
+    listItem.appendChild(bookPages)
+    listItem.appendChild(bookRead)
+    listItem.appendChild(deleteButton)
+    //appending divs to parent li 
+
+
+
+    //appending the inner html 
+    bookTitle.innerHTML = `Title: ${recentBook.title}`
+    bookAuthor.innerHTML = `Author: ${recentBook.author}`
+    bookPages.innerHTML = `Number of Pages: ${recentBook.pages}`
+    bookRead.innerHTML = `Read Status: ${recentBook.read}`
+
+    console.log(this.bookPages)  
+       
         
         }
 

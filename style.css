@@ -131,6 +131,9 @@ label{
 .book{
     background-color: #cbff8c;
     justify-self: center;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -145,5 +148,23 @@ ul{
     all: unset;
 }
 
-.book-info{
+.delete-button{
+    display: flex;
+    gap: 3px;
+    padding: 10px;
+    background-color: #ff1616;
+    box-shadow: 0 5px 0 #183153; 
+    color: white;
+    border: none;
+    font-size: large;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.delete-button:active{
+    box-shadow: none;
+    transform: translateY(5px);
 }
