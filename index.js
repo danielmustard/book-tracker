@@ -10,6 +10,12 @@ const bookPagesInput = document.getElementById('book-pages')
 const bookStatus = document.getElementById('book-read')
 
 
+bookStatus.addEventListener('click', () =>{
+    console.log(this.value)
+})
+
+
+
 //Array to store books added to library 
 let myLibrary = []
 
@@ -32,6 +38,7 @@ formSubmitButton.addEventListener('click', (e) => {
         bookPagesInput.value,
         bookStatus.value,
     )
+
     myLibrary.push(newBook)
     //hiding form again on submit'
     formContainer.style.display = "none"
@@ -52,6 +59,7 @@ function Book(title,author,pages,read){
 }
 
 const addBookToLibrary = () => {
+    console.table(myLibrary)
     //
     const booksGrid = document.getElementById('books-grid')
     //This gets the most recent library book added to array
@@ -86,14 +94,13 @@ const addBookToLibrary = () => {
 
 
 
+    const hasread = (recentBook.read) == "on" ? "Read" : "Not Read"
+
     //appending the inner html 
     bookTitle.innerHTML = `Title: ${recentBook.title}`
     bookAuthor.innerHTML = `Author: ${recentBook.author}`
     bookPages.innerHTML = `Number of Pages: ${recentBook.pages}`
-    bookRead.innerHTML = `Read Status: ${recentBook.read}`
-
-    console.log(this.bookPages)  
-       
-        
+    bookRead.innerHTML = `Read Status: ${hasread}`
+ 
         }
 
