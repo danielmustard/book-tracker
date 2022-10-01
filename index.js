@@ -10,6 +10,8 @@ const bookPagesInput = document.getElementById('book-pages')
 const bookStatus = document.getElementById('book-read')
 
 
+
+
 bookStatus.addEventListener('click', () =>{
     console.log(this.value)
 })
@@ -36,7 +38,7 @@ formSubmitButton.addEventListener('click', (e) => {
         bookTitleInput.value,
         bookAuthorInput.value,
         bookPagesInput.value,
-        bookStatus.value,
+        bookStatus.checked,
     )
 
     myLibrary.push(newBook)
@@ -92,9 +94,7 @@ const addBookToLibrary = () => {
     listItem.appendChild(deleteButton)
     //appending divs to parent li 
 
-
-
-    const hasread = (recentBook.read) == "on" ? "Read" : "Not Read"
+    const hasread = (recentBook.read) == true ? "Read" : "Not Read"
 
     //appending the inner html 
     bookTitle.innerHTML = `Title: ${recentBook.title}`
